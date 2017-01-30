@@ -42,3 +42,17 @@ bool =
 char :: Parser Char
 char =
   A.anyChar
+
+{-|
+Provides the default lenient parser for a type.
+-}
+class LenientParser a where
+  lenientParser :: Parser a
+
+instance LenientParser Bool where
+  lenientParser =
+    Attoparsec.Data.Text.bool
+
+instance LenientParser Char where
+  lenientParser =
+    Attoparsec.Data.Text.char
