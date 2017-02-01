@@ -21,10 +21,6 @@ import Data.ByteString as Exports (ByteString)
 -------------------------
 import Data.Scientific as Exports (Scientific)
 
--- uuid
--------------------------
-import Data.UUID as Exports (UUID)
-
 -- time
 -------------------------
 import Data.Time as Exports

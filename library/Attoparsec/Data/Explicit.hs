@@ -1,11 +1,13 @@
 module Attoparsec.Data.Explicit
 (
+  char,
+  text,
+  utf8Bytes,
   bool,
   signedIntegral,
   unsignedIntegral,
   A.double,
   A.scientific,
-  char,
   -- * Time
   B.timeOfDayInISO8601,
   B.dayInISO8601,
@@ -17,15 +19,26 @@ where
 import Attoparsec.Data.Prelude hiding (bool)
 import qualified Data.Attoparsec.Text as A
 import qualified Attoparsec.Time as B
+import qualified Data.Text.Encoding as C
 
 
-signedIntegral :: Integral a => A.Parser a
-signedIntegral =
-  A.signed A.decimal
+char :: A.Parser Char
+char =
+  A.anyChar
 
-unsignedIntegral :: Integral a => A.Parser a
-unsignedIntegral =
-  A.decimal
+{-|
+Consumes all the remaining input.
+-}
+text :: A.Parser Text
+text =
+  A.takeText
+
+{-|
+Consumes all the remaining input, encoding it using UTF8.
+-}
+utf8Bytes :: A.Parser ByteString
+utf8Bytes =
+  C.encodeUtf8 <$> A.takeText
 
 {-|
 Accepts any string interpretable as a boolean:
@@ -47,6 +60,10 @@ bool =
     'Y' -> A.asciiCI "es" $> True <|> pure True
     _ -> empty
 
-char :: A.Parser Char
-char =
-  A.anyChar
+signedIntegral :: Integral a => A.Parser a
+signedIntegral =
+  A.signed A.decimal
+
+unsignedIntegral :: Integral a => A.Parser a
+unsignedIntegral =
+  A.decimal
