@@ -35,7 +35,8 @@ library
   hs-source-dirs:
     library
   exposed-modules:
-    Attoparsec.Data
+    Attoparsec.Data.Explicit
+    Attoparsec.Data.Implicit
   other-modules:
     Attoparsec.Data.Prelude
   default-extensions:
