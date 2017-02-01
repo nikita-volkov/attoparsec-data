@@ -9,10 +9,6 @@ where
 -------------------------
 import BasePrelude as Exports
 
--- hashable
--------------------------
-import Data.Hashable as Exports (Hashable(..))
-
 -- text
 -------------------------
 import Data.Text as Exports (Text)
@@ -32,11 +28,3 @@ import Data.UUID as Exports (UUID)
 -- time
 -------------------------
 import Data.Time as Exports
-
--- vector
--------------------------
-import Data.Vector as Exports (Vector)
-
--- dlist
--------------------------
-import Data.DList as Exports (DList)
