@@ -14,12 +14,12 @@ class LenientParser a where
 
 #define INSTANCE(TYPE, FUNCTION) instance LenientParser TYPE where {{-# INLINE lenientParser #-}; lenientParser = FUNCTION;}
 
-INSTANCE(Bool, A.bool)
+-- | Consumes all the remaining input.
+INSTANCE(Text, A.text)
+-- | Consumes all the remaining input, encoding it using UTF8.
+INSTANCE(ByteString, A.utf8Bytes)
 INSTANCE(Char, A.char)
-INSTANCE(TimeOfDay, A.timeOfDayInISO8601)
-INSTANCE(Day, A.dayInISO8601)
-INSTANCE(TimeZone, A.timeZoneInISO8601)
-INSTANCE(UTCTime, A.utcTimeInISO8601)
+INSTANCE(Bool, A.bool)
 INSTANCE(Integer, A.signedIntegral)
 INSTANCE(Int, A.signedIntegral)
 INSTANCE(Int8, A.signedIntegral)
@@ -33,5 +33,9 @@ INSTANCE(Word32, A.unsignedIntegral)
 INSTANCE(Word64, A.unsignedIntegral)
 INSTANCE(Double, A.double)
 INSTANCE(Scientific, A.scientific)
+INSTANCE(TimeOfDay, A.timeOfDayInISO8601)
+INSTANCE(Day, A.dayInISO8601)
+INSTANCE(TimeZone, A.timeZoneInISO8601)
+INSTANCE(UTCTime, A.utcTimeInISO8601)
 
 #undef INSTANCE
