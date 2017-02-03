@@ -22,6 +22,9 @@ import qualified Attoparsec.Time as B
 import qualified Data.Text.Encoding as C
 
 
+{-|
+Any character.
+-}
 char :: A.Parser Char
 char =
   A.anyChar
@@ -60,10 +63,16 @@ bool =
     'Y' -> A.asciiCI "es" $> True <|> pure True
     _ -> empty
 
+{-|
+Signed decimal.
+-}
 signedIntegral :: Integral a => A.Parser a
 signedIntegral =
   A.signed A.decimal
 
+{-|
+Unsigned decimal.
+-}
 unsignedIntegral :: Integral a => A.Parser a
 unsignedIntegral =
   A.decimal
