@@ -8,6 +8,8 @@ import qualified Data.Attoparsec.Text as B
 
 {-|
 Provides the default lenient parser for a type.
+
+By convention, the parser should not check for the end of input.
 -}
 class LenientParser a where
   lenientParser :: B.Parser a
