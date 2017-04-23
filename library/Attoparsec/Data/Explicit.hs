@@ -13,6 +13,8 @@ module Attoparsec.Data.Explicit
   B.dayInISO8601,
   B.timeZoneInISO8601,
   B.utcTimeInISO8601,
+  B.diffTime,
+  B.nominalDiffTime,
 )
 where
 

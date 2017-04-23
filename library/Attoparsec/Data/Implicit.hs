@@ -39,5 +39,7 @@ INSTANCE(TimeOfDay, A.timeOfDayInISO8601)
 INSTANCE(Day, A.dayInISO8601)
 INSTANCE(TimeZone, A.timeZoneInISO8601)
 INSTANCE(UTCTime, A.utcTimeInISO8601)
+INSTANCE(DiffTime, A.diffTime)
+INSTANCE(NominalDiffTime, A.nominalDiffTime)
 
 #undef INSTANCE
