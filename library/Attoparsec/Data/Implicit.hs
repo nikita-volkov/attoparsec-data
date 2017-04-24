@@ -41,5 +41,6 @@ INSTANCE(TimeZone, A.timeZoneInISO8601)
 INSTANCE(UTCTime, A.utcTimeInISO8601)
 INSTANCE(DiffTime, A.diffTime)
 INSTANCE(NominalDiffTime, A.nominalDiffTime)
+INSTANCE(String, A.string)
 
 #undef INSTANCE

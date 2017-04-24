@@ -8,6 +8,7 @@ module Attoparsec.Data.Explicit
   unsignedIntegral,
   A.double,
   A.scientific,
+  string,
   -- * Time
   B.timeOfDayInISO8601,
   B.dayInISO8601,
@@ -78,3 +79,10 @@ Unsigned decimal.
 unsignedIntegral :: Integral a => A.Parser a
 unsignedIntegral =
   A.decimal
+
+{-|
+Plain String.
+-}
+string :: A.Parser String
+string =
+  many A.anyChar
