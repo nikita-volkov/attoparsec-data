@@ -21,7 +21,7 @@ where
 
 import Attoparsec.Data.Prelude hiding (bool)
 import qualified Data.Attoparsec.Text as A
-import qualified Attoparsec.Time as B
+import qualified Attoparsec.Time.Text as B
 import qualified Data.Text.Encoding as C
 
 
