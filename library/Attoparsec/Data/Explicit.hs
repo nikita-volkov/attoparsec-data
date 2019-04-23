@@ -9,6 +9,7 @@ module Attoparsec.Data.Explicit
   A.double,
   A.scientific,
   string,
+  uuid,
   -- * Time
   B.timeOfDayInISO8601,
   B.dayInISO8601,
@@ -23,6 +24,7 @@ import Attoparsec.Data.Prelude hiding (bool)
 import qualified Data.Attoparsec.Text as A
 import qualified Attoparsec.Time.Text as B
 import qualified Data.Text.Encoding as C
+import qualified Data.UUID as Uuid
 
 
 {-|
@@ -86,3 +88,13 @@ Plain String.
 string :: A.Parser String
 string =
   many A.anyChar
+
+{-|
+UUID.
+-}
+uuid :: A.Parser UUID
+uuid = do
+  text <- A.takeWhile (\x -> isAlphaNum x || x == '_')
+  case Uuid.fromText text of
+    Just uuid -> return uuid
+    Nothing -> fail (showString "Unparsable UUID: " (show text))

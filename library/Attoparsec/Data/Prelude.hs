@@ -24,3 +24,7 @@ import Data.Scientific as Exports (Scientific)
 -- time
 -------------------------
 import Data.Time as Exports
+
+-- uuid
+-------------------------
+import Data.UUID as Exports (UUID)
