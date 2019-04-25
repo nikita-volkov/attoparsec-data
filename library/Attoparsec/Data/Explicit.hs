@@ -94,7 +94,7 @@ UUID.
 -}
 uuid :: A.Parser UUID
 uuid = do
-  text <- A.takeWhile (\x -> isAlphaNum x || x == '_')
+  text <- A.take 36
   case Uuid.fromText text of
     Just uuid -> return uuid
     Nothing -> fail (showString "Unparsable UUID: " (show text))
