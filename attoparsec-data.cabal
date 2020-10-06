@@ -21,6 +21,7 @@ library
   other-modules:
     Attoparsec.Data.Explicit
     Attoparsec.Data.Implicit
+    Attoparsec.Data.Parsers
     Attoparsec.Data.Prelude
   build-depends:
     attoparsec ==0.13.*,

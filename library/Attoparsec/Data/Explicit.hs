@@ -10,6 +10,7 @@ module Attoparsec.Data.Explicit
   A.scientific,
   string,
   uuid,
+  D.show,
   -- * Time
   B.timeOfDayInISO8601,
   B.dayInISO8601,
@@ -24,6 +25,7 @@ import Attoparsec.Data.Prelude hiding (bool)
 import qualified Data.Attoparsec.Text as A
 import qualified Attoparsec.Time.Text as B
 import qualified Data.Text.Encoding as C
+import qualified Attoparsec.Data.Parsers as D
 import qualified Data.UUID as Uuid
 
 
