@@ -1,5 +1,5 @@
 name: attoparsec-data
-version: 1.0.5
+version: 1.0.5.1
 category: Parsing
 synopsis: Parsers for the standard Haskell data types
 homepage: https://github.com/nikita-volkov/attoparsec-data
