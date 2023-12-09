@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name:          attoparsec-data
-version:       1.0.5.3
+version:       1.0.5.4
 category:      Parsing
 synopsis:      Parsers for the standard Haskell data types
 description:   Collection of parsers for various common data formats.
