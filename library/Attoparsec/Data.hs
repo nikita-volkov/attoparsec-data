@@ -1,10 +1,10 @@
 module Attoparsec.Data
-(
-  -- * Explicit
-  module Attoparsec.Data.Explicit,
-  -- * Implicit
-  module Attoparsec.Data.Implicit,
-)
+  ( -- * Explicit
+    module Attoparsec.Data.Explicit,
+
+    -- * Implicit
+    module Attoparsec.Data.Implicit,
+  )
 where
 
 import Attoparsec.Data.Explicit
